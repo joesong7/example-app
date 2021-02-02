@@ -11,8 +11,13 @@ class location extends Model
     protected $table = 'location';
     protected $primaryKey = 'id';
     protected $fillable = ['name', 'counties_id'];
-    public function location()
+    
+    public function trail()
     {
-        return $this->hasOne('App\Models\countie');
+        return $this->hasOne('App\Models\trail');
+    }
+    public function countie()
+    {
+        return $this->belongsTo('App\Models\countie');
     }
 }

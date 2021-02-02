@@ -13,8 +13,12 @@ class trail extends Model
     protected $fillable = ['title', 'location_id', 'distance', 'coverImage', 'difficulty', 'evaluation', 'altitude'];
 
 
-    public function location()
-    {
+     public function location()
+     {
         return $this->belongsTo('App\Models\location');
+     }
+    public function locationcountie()
+    {
+        return $this->hasoneThrough(countie::class,location::class);
     }
 }

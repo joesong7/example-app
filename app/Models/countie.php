@@ -8,8 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class countie extends Model
 {
     use HasFactory;
-    protected $table ='counties';
-    protected $primaryKey ='id';
-    protected $fillable =['name'];
+    protected $table = 'counties';
+    protected $primaryKey = 'id';
+    protected $fillable = ['name'];
     
+    public function trailcountle()
+    {
+        return $this->hasOneThrough(trail::class,location::class);
+    }
 }

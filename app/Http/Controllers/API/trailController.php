@@ -5,7 +5,8 @@ namespace App\Http\Controllers\API;
 use App\Models\trail;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Models\countie;
+use App\Models\location;
 
 class trailController extends Controller
 {
@@ -47,9 +48,13 @@ class trailController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        $result = trail::with('location')->get(); //查詢id動作
-        return $result;
+    {  
+        $result=trail::where('id',$id)->with('location','location.countie')->get();
+        /** 關聯id */
+
+    return $result;
+       
+
     }
 
     /**
@@ -58,10 +63,10 @@ class trailController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
+    //public function edit($id)
+   // {
         //
-    }
+    //}
 
     /**
      * Update the specified resource in storage.

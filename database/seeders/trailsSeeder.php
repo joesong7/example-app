@@ -18,10 +18,9 @@ class trailsSeeder extends Seeder
     {
         DB::table('trails')->insert([
             'title' => '東眼山自導式步道',
-            'location' => '復興鄉',
+            'location_ID' => '401',
             'distance' => '4000',
             'coverImage' => 'https://example.com/uploads/images/collection/0/icon.png',
-            'county' => '桃園縣',
             'difficulty' => '3',
             'evaluation' => '3', 
             'altitude' => '2000',       
